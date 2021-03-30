@@ -20,16 +20,31 @@ class MainWindow(Gtk.Window):
         self.page2 = Gtk.Box()
         self.page2.set_border_width(10)
         self.page2.add(Gtk.Label("Page 2."))
-        image = Gtk.Image.new_from_icon_name("dialog-information-symbolic.symbolic", Gtk.IconSize.MENU)
-        self.notebook.append_page(self.page2, image)
+        image2 = Gtk.Image.new_from_icon_name("dialog-information-symbolic.symbolic", Gtk.IconSize.MENU)
+        self.notebook.append_page(self.page2, image2)
 
-        # Second page
-        self.page2 = Gtk.Box()
-        self.page2.set_border_width(10)
-        self.page2.add(Gtk.Label("Page 3."))
-        image = Gtk.Image.new_from_icon_name("open-menu-symbolic", Gtk.IconSize.MENU)
-        self.notebook.append_page(self.page2, image)
+        # Third page
+        self.page3 = Gtk.Box()
+        self.page3.set_border_width(10)
+        self.page3.add(Gtk.Label("Page 3."))
+        image3 = Gtk.Image.new_from_icon_name("open-menu-symbolic", Gtk.IconSize.MENU)
+        self.notebook.append_page(self.page3, image3)
 
+        # Forth page
+        self.page4 = Gtk.Box()
+        self.page4.set_border_width(10)
+        self.page4.add(Gtk.Label("Page 4."))
+        image4 = Gtk.Image.new_from_icon_name("list-add-symbolic", Gtk.IconSize.MENU)
+        self.notebook.append_page(self.page4, image4)
+
+        # Fifth page
+        self.page5 = Gtk.TextView()
+        self.page5.set_border_width(20)
+        self.page5.add(Gtk.Label("Page 5."))
+        image5 = Gtk.Image.new_from_icon_name("list-remove-symbolic", Gtk.IconSize.MENU)
+        self.notebook.append_page(self.page5, image5)
+
+        # Header bar
         header_bar = Gtk.HeaderBar()
         header_bar.set_show_close_button(True)
         header_bar.props.title = "Max's Python Application"
@@ -55,17 +70,16 @@ class MainWindow(Gtk.Window):
 
         # Left arrow on left
         left_arrow = Gtk.Button()
-        left_arrow.add(Gtk.Arrow(Gtk.ArrowType.LEFT,Gtk.ShadowType.NONE))
+        left_arrow.add(Gtk.Arrow(Gtk.ArrowType.LEFT, Gtk.ShadowType.NONE))
         box.add(left_arrow)
 
         # Right arrow on left
         right_arrow = Gtk.Button()
-        right_arrow.add(Gtk.Arrow(Gtk.ArrowType.RIGHT,Gtk.ShadowType.NONE))
+        right_arrow.add(Gtk.Arrow(Gtk.ArrowType.RIGHT, Gtk.ShadowType.NONE))
         box.add(right_arrow)
 
-        # Text input box
         header_bar.pack_start(box)
-        self.add(Gtk.TextView())
+
 
 window = MainWindow()
 window.connect("delete-event", Gtk.main_quit)
